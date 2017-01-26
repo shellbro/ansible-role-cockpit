@@ -1,0 +1,5 @@
+---
+- name: install Cockpit
+  yum:
+    name: cockpit
+    state: present

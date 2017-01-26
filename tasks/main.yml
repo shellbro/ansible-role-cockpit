@@ -1,14 +1,5 @@
 ---
-- name: install Cockpit in Fedora
-  dnf:
-    name: cockpit
-    state: present
-  when: ansible_distribution == "Fedora"
-- name: install Cockpit in CentOS
-  yum:
-    name: cockpit
-    state: present
-  when: ansible_distribution == "CentOS"
+- include: install-{{ ansible_distribution | lower }}.yml
 - name: configure Cockpit service
   service:
     name: cockpit.socket

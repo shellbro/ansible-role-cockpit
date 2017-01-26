@@ -1,0 +1,5 @@
+---
+- name: install Cockpit
+  dnf:
+    name: cockpit
+    state: present
