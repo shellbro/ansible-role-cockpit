@@ -1,6 +1,6 @@
 ---
 - include: install-{{ ansible_distribution | lower }}.yml
-- name: configure Cockpit service
+- name: start cockpit
   service:
     name: cockpit.socket
     state: started
