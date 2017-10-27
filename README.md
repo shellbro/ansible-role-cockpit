@@ -1,4 +1,4 @@
 ansible-role-cockpit
 ====================
 
-Ansible role for installing Cockpit in Fedora and CentOS 7.
+Ansible role for installing Cockpit on Fedora and CentOS 7.
