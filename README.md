@@ -25,7 +25,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-          - role: shellbro.cockpit
+          - shellbro.cockpit
 
 License
 -------
