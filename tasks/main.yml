@@ -1,7 +1,12 @@
 ---
-- include_tasks: install-{{ ansible_distribution | lower }}.yml
+- name: install cockpit
+  package:
+    name: cockpit
+    state: present
+  become: yes
 - name: start cockpit
   service:
     name: cockpit.socket
     state: started
     enabled: yes
+  become: yes
