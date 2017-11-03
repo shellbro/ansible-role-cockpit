@@ -3,10 +3,6 @@ Vagrant.configure("2") do |config|
   
   config.vm.define "fedora" do |fedora|
     fedora.vm.box = "fedora/26-cloud-base"
-    fedora.vm.provider "virtualbox" do |v|
-      v.cpus = 2
-      v.memory = 2048
-    end
     fedora.vm.provision "shell" do |s|
       s.inline = "dnf -y install python python2-dnf libselinux-python"
     end
@@ -15,10 +11,6 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "centos" do |centos|
     centos.vm.box = "centos/7"
-    centos.vm.provider "virtualbox" do |v|
-      v.cpus = 2
-      v.memory = 2048
-    end
     centos.vm.provision "ansible" do |a|
       a.limit = "all"
       a.playbook = "tests/test.yml"
