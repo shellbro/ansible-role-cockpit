@@ -4,7 +4,7 @@
     name: cockpit
     state: present
   become: yes
-- name: start cockpit
+- name: start and enable cockpit service
   service:
     name: cockpit.socket
     state: started
