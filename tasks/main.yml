@@ -10,3 +10,16 @@
     state: started
     enabled: yes
   become: yes
+- name: check if firewalld is running
+  command: systemctl status firewalld
+  register: firewalld_status
+  changed_when: false
+  failed_when: firewalld_status.rc > 4
+- name: configure firewalld
+  firewalld:
+    port: 9090/tcp
+    state: enabled
+    permanent: yes
+    immediate: yes
+  when: firewalld_status.rc == 0
+  become: yes
